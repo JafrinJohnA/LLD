@@ -35,7 +35,7 @@ public class EntryTerminal extends Terminal {
         };
     }
 
-    public ParkingTicket processVehicleArrival(Scanner scanner) {
+    public void processVehicleArrival(Scanner scanner) {
         displayMessage("--- Starting New Vehicle Entry ---");
 
         displayMessage("Please enter your vehicle's license plate number:");
@@ -50,7 +50,7 @@ public class EntryTerminal extends Terminal {
 
         if (allocatedSpot == null) {
             displayMessage("PARKING LOT IS FULL for " + requiredType + " vehicles! Denying entry.");
-            return null;
+            return;
         }
 
         // Issue the ticket and track it
@@ -60,6 +60,5 @@ public class EntryTerminal extends Terminal {
         displayMessage("Please proceed to Spot ID: " + allocatedSpot.getParkingSpotId()
                 + " (Type: " + allocatedSpot.getSpotType() + ", Dist: " + String.format("%.1f", allocatedSpot.calculateDistanceToTerminal()) + "m)");
 
-        return ticket;
     }
 }
