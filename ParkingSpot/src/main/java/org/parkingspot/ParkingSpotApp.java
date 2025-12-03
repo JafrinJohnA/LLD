@@ -5,7 +5,7 @@ import org.parkingspot.model.*;
 import java.util.Scanner;
 
 
-public class Main {
+public class ParkingSpotApp {
     private static void initializeParkingSpots(MonitoringSystem system) {
         System.out.println("--- Initializing Parking Spots ---");
 
@@ -25,7 +25,7 @@ public class Main {
         System.out.println("Registered 10 total spots (3 MC, 4 C, 3 L).\n");
     }
 
-    static void main(String[] args) {
+    static void main() {
         // 1. Initialize core system components
         MonitoringSystem parkingSystem = new MonitoringSystem();
         initializeParkingSpots(parkingSystem);
